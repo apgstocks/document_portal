@@ -1,4 +1,4 @@
-#!/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_35ami3gu6b/croot/openssl_1753176366470/_build_env/bin/perl
+#!/usr/bin/env perl
 # Copyright 2000-2025 The OpenSSL Project Authors. All Rights Reserved.
 #
 # Licensed under the Apache License 2.0 (the "License").  You may not use

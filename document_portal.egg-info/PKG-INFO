@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: document_portal
+Version: 0.1
+Summary: A document management portal built with FastAPI
+Home-page: https://github.com/apgstocks/document_portal
+Author: Apsara
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: summary
+
+# conda commands
+```
+conda create -p <env_name> <python=version> -y
+```
+
+```
+conda activate <path_to_env>
+```
+
+```
+pip install -r requirments.txt
+```
+
+# git commands
+
+```
+git init
+git add .
+git commit -m "<commit message>"
+git push
+```
+
+# To clone the repo
+```
+git clone <url>
+```

@@ -24,3 +24,11 @@ git push
 ```
 git clone <url>
 ```
+
+# Post setting up 
+```
+setup the file
+```
+```
+pip install -e .
+```
