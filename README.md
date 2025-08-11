@@ -19,3 +19,8 @@ git add .
 git commit -m "<commit message>"
 git push
 ```
+
+# To clone the repo
+```
+git clone <url>
+```
