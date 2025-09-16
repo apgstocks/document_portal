@@ -1,0 +1,9 @@
+[2025-09-16 17:47:18,166] ERROR Logging Experiement (line:22) - 
+        Error in [/var/folders/n_/qtctj2rj0_vcqffng0qn1z980000gn/T/ipykernel_4322/1838555907.py] at line [19]
+        Error Message: division by zero
+        Traceback: Traceback (most recent call last):
+  File "/var/folders/n_/qtctj2rj0_vcqffng0qn1z980000gn/T/ipykernel_4322/1838555907.py", line 19, in <module>
+    a=1/0
+ZeroDivisionError: division by zero
+
+        
