@@ -1,9 +1,0 @@
-[2025-09-16 17:52:10,058] ERROR custom_exception.py (line:26) - 
-        Error in [/Users/apsara/Documents/llmops/document_portal/exception/custom_exception.py] at line [23]
-        Error Message: division by zero
-        Traceback: Traceback (most recent call last):
-  File "/Users/apsara/Documents/llmops/document_portal/exception/custom_exception.py", line 23, in <module>
-    a=1/0
-ZeroDivisionError: division by zero
-
-        
