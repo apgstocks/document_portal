@@ -81,10 +81,15 @@ class ModelLoader:
         return llm
 if __name__ == "__main__":
     loader=ModelLoader()
-
+    #Load the emmbedding
     embeddings=loader.load_embedding_model()
     print(f"Embedding models loaded:{embeddings}")
 
+    #Test the embedding
+    result=embeddings.embed_query("Hello, How are you?")
+    print(f"Embedding test result:{result}")
+
+    #Load the llm
     llm=loader.load_llm()
     print(f"LLM loaded:{llm}")
 
