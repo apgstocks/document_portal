@@ -1,5 +1,0 @@
-{"available_keys": ["GROQ_API_KEY", "GOOGLE_API_KEY"], "timestamp": "2025-09-19T09:49:56.790168Z", "level": "info", "event": "Environment variables validated"}
-{"config_keys": ["faiss_db", "embedding_model", "retriever", "llm"], "timestamp": "2025-09-19T09:49:56.791114Z", "level": "info", "event": "Config loaded"}
-{"timestamp": "2025-09-19T09:49:56.791166Z", "level": "info", "event": "Embedding model loading.."}
-{"provider": "groq", "model_name": "deepseek-r1-distill-llama-70b", "temperature": 0.0, "max_token": 2048, "timestamp": "2025-09-19T09:50:03.484503Z", "level": "info", "event": "Loading LLM"}
-HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
