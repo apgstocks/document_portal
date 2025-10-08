@@ -60,7 +60,7 @@ if __name__=="__main__":
     from pathlib import Path
     from io import BytesIO
     
-    pdf_path=r"/Users/apsara/Documents/llmops/document_portal/data/document_analysis/1706.03762v6.pdf"
+    pdf_path=r"/Users/apsara/Documents/llmops/document_portal/data/document_analysis/sample.pdf"
 
 
     
