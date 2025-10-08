@@ -1,0 +1,2 @@
+{"session_id": "test_session", "session_path": "/Users/apsara/Documents/llmops/document_portal/data/document_analysis/test_session", "timestamp": "2025-10-08T07:09:45.798107Z", "level": "info", "event": "PDF handler initialised:"}
+{"file": "1706.03762v6.pdf", "session_id": "test_session", "path": "/Users/apsara/Documents/llmops/document_portal/data/document_analysis/test_session/1706.03762v6.pdf", "timestamp": "2025-10-08T07:09:45.800938Z", "level": "info", "event": "PDF saved successfully"}

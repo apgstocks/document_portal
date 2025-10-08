@@ -1,0 +1,2 @@
+{"session_id": "test_session", "session_path": "/Users/apsara/Documents/llmops/document_portal/data/document_analysis/test_session", "timestamp": "2025-09-19T11:29:23.651154Z", "level": "info", "event": "PDF handler initialised:"}
+{"timestamp": "2025-09-19T11:29:23.651251Z", "level": "error", "event": "Error in saving PDF: expected str, bytes or os.PathLike object, not Dummyclass"}
