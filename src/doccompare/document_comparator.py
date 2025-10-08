@@ -19,9 +19,10 @@ class DocumentComparatorLLM:
         self.parser=JsonOutputParser(pydantic_object=SummaryResponse)
         self.fixingparser=OutputFixingParser.from_llm(parser=self.parser,llm=self.llm)
         self.prompt=PROMPT_REGISTRY['document_comparison']
-        self.chain=self.prompt | self.llm | self.parser | self.fixingparser
+        self.chain = self.prompt | self.llm | self.fixingparser
+
         self.log.info("Document comparator has been initialised")
-    def compare_documents(self,combined_docs)->pd.DateFrame:
+    def compare_documents(self,combined_docs)->pd.DataFrame:
         try:
             inputs={
                 "combined_docs":combined_docs,
@@ -39,7 +40,7 @@ class DocumentComparatorLLM:
     def _format_response(self,res:list[dict])->pd.DataFrame:
         try:
             df=pd.DataFrame(res)
-            self.log.info("Response formatted into DataFrame")
+            self.log.info("Response formatted into DataFrame",dataframe=df)
             return df
         except Exception as e:
             self.log.error(f"Error in formatting response into DataFrame",error=str(e))

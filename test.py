@@ -56,12 +56,12 @@ def load_fake_uploaded_file(file_path:Path):
     return io.BytesIO(file_path.read_bytes)
 
 def test_compare_documents():
-    ref_path="/Users/apsara/Documents/llmops/document_portal/data/document_compare/Report_v1.pdf"
-    act_path="/Users/apsara/Documents/llmops/document_portal/data/document_compare/Report_v2.pdf"
+    ref_path=Path("/Users/apsara/Documents/llmops/document_portal/data/document_compare/Report_v1.pdf")
+    act_path=Path("/Users/apsara/Documents/llmops/document_portal/data/document_compare/Report_v2.pdf")
 
     class Fakeupload:   
-        def __init__(self,file_path:Path) -> None:
-            self.name=Path(file_path).name
+        def __init__(self,file_path:Path):
+            self.name=file_path.name
             self._buffer=file_path.read_bytes()
 
         def getbuffer(self):
@@ -72,7 +72,7 @@ def test_compare_documents():
     act_upload=Fakeupload(act_path)
 
     ref_file,act_file=comparator.save_uploaded_files(ref_upload,act_upload)
-    combined_text=comparator.combine_text(ref_file, act_file)
+    combined_text=comparator.combine_documents()
 
     print("\n Combined Text Preview (First 1000 char):\n")
     print(combined_text[:1000])
