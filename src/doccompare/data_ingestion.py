@@ -4,13 +4,20 @@ import fitz
 from logger.custom_logger import CustomLogger
 from exception.custom_exception import DocumentPortalException
 
-class DocumentComparator:
-    def __init__(self):
-        pass
+class DocumentIngestion:
+    def __init__(self,base_dir:str="data/document_compare"):
+        self.log=CustomLogger().get_Logger(__name__)
+        self.base_dir=Path(base_dir)
+        self.base_dir.mkdir(parents=True,exist_ok=True)
 
     def delete_existing_file(self):
         try:
-            pass    
+            if self.base_dir.exists() and self.base_dir.is_dir():
+                for file in self.base_dir.iterdir():
+                    if file.is_file:
+                        self.log.info(f"Deleting file",path=str(file))
+                        file.unlink()
+                self.log.info("Directory cleaned",directory=str(self.base_dir))
         except Exception as e:
             self.log.error(f"Error in deleting existing file",error=str(e))
             raise DocumentPortalException("Error occured while deleting existing file", sys)
@@ -55,3 +62,19 @@ class DocumentComparator:
             self.log.error(f"Error in reading PDF", error=str(e))
             raise DocumentPortalException("Error occured while reading PDF", sys)
         
+    def combine_documents(self)->str:
+        try:
+            content_dic={}
+            doc_parts=[]
+            for filename in sorted(self.base_dir.iterdir()):
+                if filename.is_file() and filename.suffix==".pdf":
+                    content_dic[filename.name]=self.read_pdf(filename)
+                
+            for filename,content in content_dic.items():
+                doc_parts.append(f"Document: {filename}\n{content}")
+            combined_text="\n\n".join(doc_parts)
+            self.log.info("Documents combined",count=len(doc_parts))
+            return combined_text
+        except Exception as e:
+            self.log.error(f"Error in combining documents", error=str(e))
+            raise DocumentPortalException("Error occured while combining documents", sys)
