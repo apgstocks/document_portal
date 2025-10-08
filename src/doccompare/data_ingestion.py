@@ -15,9 +15,21 @@ class DocumentComparator:
             self.log.error(f"Error in deleting existing file",error=str(e))
             raise DocumentPortalException("Error occured while deleting existing file", sys)
 
-    def save_uploaded_files(self):
+    def save_uploaded_files(self,reference_file,actual_file):
         try:
-            pass
+            self.delete_existing_file()
+            self.log.info("Existing files deleted successfully")
+
+            ref_path=self.base_dir
+            act_path=self.base_dir
+            if not reference_file.name.endswith(".pdf") or not actual_file.name.endswith(".pdf"):
+                raise ValueError("Only PDF files are allowed")
+            
+            with open(reference_file,"wb") as f:
+                f.write(reference_file.getbuffer())
+            
+            with open(actual_file, "wb") as f:
+                f.write(actual_file.getbuffer())
         except Exception as e:
             self.log.error(f"Error in saving uploaded files", error=str(e))
             raise DocumentPortalException("Error occured while saving uploaded files", sys)
