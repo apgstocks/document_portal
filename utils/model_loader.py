@@ -48,7 +48,7 @@ class ModelLoader:
             Load and return the LLM
             """
         llm_block=self.config["llm"]
-        provider_key=os.getenv("LLM_PROVIDER","groq")
+        provider_key=os.getenv("LLM_PROVIDER","google")#Change the env variable here based on the model
 
         if provider_key not in llm_block:
             log.error(f"LLM provider '{provider_key}' not found in config")

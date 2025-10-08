@@ -1,2 +1,0 @@
-{"session_id": "session_20251008_072710_b706eea4", "session_path": "/Users/apsara/Documents/llmops/document_portal/data/document_analysis/session_20251008_072710_b706eea4", "timestamp": "2025-10-08T07:27:10.700534Z", "level": "info", "event": "PDF handler initialised:"}
-{"timestamp": "2025-10-08T07:27:10.700722Z", "level": "error", "event": "Error in saving PDF: [Errno 2] No such file or directory: '/Users/apsara/Documents/llmops/document_portal/data/document_analysis/sample.pdf'"}

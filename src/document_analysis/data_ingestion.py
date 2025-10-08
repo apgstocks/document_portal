@@ -55,7 +55,7 @@ class DocumentHandler:
         except Exception as e:
             self.log.error(f"Error in reading PDF: {e}")
             raise DocumentPortalException("Error in reading PDF", e) from e
-
+"""
 if __name__=="__main__":
     from pathlib import Path
     from io import BytesIO
@@ -87,3 +87,4 @@ if __name__=="__main__":
         
     except Exception as e:
         print(f"Error:{e}")
+        """
