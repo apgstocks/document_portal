@@ -5,7 +5,7 @@ from utils.model_loader import ModelLoader
 from model.model import *
 from langchain_core.output_parsers import JsonOutputParser
 from langchain.output_parsers import OutputFixingParser 
-from prompt.prompt_library import *
+from prompt.prompt_library import PROMPT_REGISTRY
 import sys
 
 class DocumentAnalyser:
@@ -24,7 +24,7 @@ class DocumentAnalyser:
             self.parser=JsonOutputParser(pydantic_object=Metadata)
             self.fixing_parser=OutputFixingParser.from_llm(parser=self.parser,llm=self.llm)
 
-            self.prompt=prompt
+            self.prompt=PROMPT_REGISTRY['document_analysis']
             self.log.info("DocumentAnalyser initialised successfully")
         except Exception as e:
             self.log.error(f"Error in initialising DocumentAnalyser: {e}")
